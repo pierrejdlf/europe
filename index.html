@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Call for films - Europe in a Word - Europe Moving Image</title>
+    <meta name="description" content="Call for films - Europe in a Word - Tell your Europe in a word !" />
+
+    <meta name="google-site-verification" content="Q2MphwIsKMxngiiGZy_6QU6wUK-d_9x6y5mdWOT5sN4" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@EuMovingImage">
+    <meta name="twitter:title" content="Call for films - Europe in a Word">
+    <meta name="twitter:description" content="Call for films - Europe in a Word - Tell your Europe in a word !">
+    <meta name="twitter:creator" content="@EuMovingImage">
+    <meta name="twitter:image:src" content="http://www.europemovingimage.eu/assets/img/intro.jpg">
+
+    <meta property="og:title" content="Call for films - Europe in a Word" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.europemovingimage.eu" />
+    <meta property="og:image" content="http://www.europemovingimage.eu/assets/img/intro.jpg" />
+    <meta property="og:description" content="Call for films - Europe in a Word - Tell your Europe in a word !">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans|Ruda"/>
+    
+    <!-- my things emi -->
+    <link href="assets/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="assets/css/landing-page.css" type="text/css" rel="stylesheet"/>
+
+    <!-- my things ! -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="assets/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.countdown.js"></script>
+
+    <script src="assets/js/locales.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+
+    <script src="assets/js/parismap.min.js" type="text/javascript"></script>
+    <link href="assets/css/parismap.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="home-template">
+
+    <!-- modal to enter email -->
+    <div id="mailmodal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title" id="mySmallModalLabel">Please confirm your vote...</h4>
+            </div>
+            <div class="modal-body">
+                <p>To validate your vote, you will need to click on the confirmation link we'll send you by email (check your spam folder in case you don't find it). Please note that you can vote for more than one film !</p>
+              <input id="email" maxlength="250" name="email" type="email" placeholder="your@mail.org">
+              <button
+              id="emailbutton"
+              type="button"
+              data-success-text="Yeah !"
+              data-error-text="Oups, error. did you vote already ?"
+              data-fucked-text="Error. please contact us."
+              data-loading-text="Loading... Please wait"
+              class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CONTENT -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-ourbrand" href="#home">
+                    <img src="assets/img/logos/logo_tiny.png"/>
+                    <!-- europe • moving • image -->
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="http://www.vimeo.com/europemovingimage" target="_blank"><i class="fa fa-vimeo-square fa-lg"></i></a>
+                        <a href="https://twitter.com/EuMovingImage" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+                        <!-- <a href="http://plus.google.com/u/0/b/110601660133854258591" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a> -->
+                        <a href="https://www.facebook.com/europemoving" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+                    
+                    <li><a href="#films" data-localize="menu.films" id="filmtrigger"></a></li>
+                    <li><a href="#mapanchor" data-localize="menu.map"></a></li>
+                    <li><a href="#call" data-localize="menu.europe"></a></li>
+                    <!-- <li><a href="#conditions" data-localize="menu.conditions"></a></li> -->
+                    <li><a href="#about" data-localize="menu.about"></a></li>
+                    <li>
+                        <div class="langselect btn-group btn-group-xs">
+                            <button type="button" data-lang="en" class="btn btn-default"><img src="assets/img/flags/flag_en.png"/></button>
+                            <button type="button" data-lang="fr" class="btn btn-default"><img src="assets/img/flags/flag_fr.png"/></button>
+                            <button type="button" data-lang="es" class="btn btn-default"><img src="assets/img/flags/flag_es.png"/></button>
+                            <!--<button disabled type="button" data-lang="it" class="btn btn-default"><img src="assets/img/flags/flag_it.png"/></button>
+                            <button disabled type="button" data-lang="de" class="btn btn-default"><img src="assets/img/flags/flag_de.png"/></button>-->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="intro-header" id="home">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="intro-message">
+    <!--                     <div class="countdown"></div>
+                        <h3 class="title" data-localize="title"></h3>
+                        <h3 class="subtitle" data-localize="subtitle"></h2> -->
+                        <h3 class="title"> </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+    <div class="content-section-b" id="conditions">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading" data-localize="form.title"></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 col-sm-6 col-sm-6">
+                    <p class="lead">
+                        <ul data-localize="conditions"></ul>
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-offset-1">
+    <div> -->
+
+
+    <!-- 
+    <form class="form-horizontal" action="https://docs.google.com/forms/d/1L51Pq2VBTVFuZ-Ym1XsFbW4t4lIMPUWNvQ7GFsgjqwo/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Name"></label>
+        <div class="col-md-4">
+            <input type="text" class="form-control input-sm" name="entry.357757859" id="entry_357757859" placeholder="First Name" required>
+        </div>
+        <div class="col-md-5">
+            <input type="text" class="form-control input-sm" name="entry.1192647375" id="entry_1192647375" placeholder="Last Name" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Birthdate"></label>
+        <div class="col-md-5">
+            <input type="date" class="form-control input-sm" name="entry.1560426846" id="entry_1560426846" dir="auto" aria-label="Birth Date" aria-required="true" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Email"></label>
+        <div class="col-md-5">
+            <input type="email" class="form-control input-sm" name="entry.1052008402" id="entry_1052008402" placeholder="you@email.com" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Address"></label>
+        <div class="col-md-9">
+            <input type="text" class="form-control input-sm" name="entry.1451192912" id="entry_1451192912" placeholder="Your address" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-4 col-md-offset-3">
+            <input type="text" class="form-control input-sm" name="entry.1620171405" id="entry_1620171405" placeholder="City" required>
+        </div>
+        <div class="col-md-5">
+            <input type="text" class="form-control input-sm" name="entry.1799176386" id="entry_1799176386" placeholder="Country" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Website"></label>
+        <div class="col-md-9">
+            <input type="text" class="form-control input-sm" name="entry.335176714" id="entry_335176714" placeholder="http://your.website.com, or twitter account">
+        </div>
+    </div>
+    <hr/>
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Word"></label>
+        <div class="col-md-5">
+            <input type="text" class="form-control input-sm" name="entry.175051657" id="entry_175051657" placeholder="The word you choosed" required>
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control input-sm" name="entry.1058682053" id="entry_1058682053" placeholder="Language" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Title"></label>
+        <div class="col-md-9">
+            <input type="text" class="form-control input-sm" name="entry.1186770144" id="entry_1186770144" placeholder="My little yellow Europe" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Link"></label>
+        <div class="col-md-9">
+            <input type="text" class="form-control input-sm" name="entry.117780312" id="entry_117780312" placeholder="Film link (vimeo, dropbox, google drive, ...)" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Length"></label>
+        <div class="col-md-4">
+            <input type="text" class="form-control input-sm" name="entry.2141829988" id="entry_2141829988" placeholder="8min 42s" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Codirectors"></label>
+        <div class="col-md-9">
+            <input type="text" class="form-control input-sm" name="entry.1754972630" id="entry_1754972630" placeholder="Mark Jorigh, Paul Glittuck, Göran Brust, ...">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input" class="col-md-3 control-label text-right" data-localize="form.Synopsis"></label>
+        <div class="col-md-9">
+            <textarea type="textarea" rows="3" class="form-control input-sm" name="entry.118662242" id="entry_118662242" placeholder="One or two paragraph(s)" required></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-6 col-md-offset-3 control-label">
+            <input type="checkbox" name="entry.2020558658" id="group_2020558658_1" role="checkbox" value="i have read and accepted the conditions available on http://europemovingimage.eu" required data-localize="form.accept"> <span data-localize="form.accept"></span>
+        </div>
+        <div class="col-md-1">
+            <button type="submit" name="submit" class="btn btn-default" data-localize="form.submit"></button>
+        </div>
+    </div>
+
+
+    </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+    <!--       <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div> -->
+          <div class="modal-body">
+            <h2 class="section-heading" data-localize="projecttitle-a"></h2>
+            <div data-localize="project-a"></div>
+            <h2 class="section-heading" data-localize="projecttitle-b"></h2>
+            <div data-localize="project-b"></div>
+            <h2 class="section-heading" data-localize="projecttitle-c"></h2>
+            <div data-localize="project-c"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="content-section-da" id="project">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading" data-localize="projecttitle-a"></h2>
+                    <div data-localize="project-a"></div>
+                </div>
+                <div class="col-md-offset-6 col-md-4">
+                    <img class="img-responsive" src="assets/img/projecta.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="content-section-films affiche">
+        <a href="https://www.facebook.com/events/1498527053737850/" target="_new">join event on facebook !</a>
+        <!-- <img src="assets/img/affiche.jpg"/> -->
+    </div>
+
+
+    <div class="content-section-films" id="films">
+    <div class="container">
+        <div class="row">
+            <h1 class="filmstitle" data-localize="watchfilms"></h1>
+        </div>
+        <div class="films"></div>
+    </div>
+    </div>
+     
+
+    <div class="content-section-space" id="mapanchor"></div>
+    <h1 class="maptitle" data-localize="map.films"></h1>
+    <div id="mapfilms" class="mapband"></div>
+
+
+    <div class="content-section-space"></div>
+    <h1 class="maptitle" data-localize="map.tweets"></h1>
+    <div id="maptweets" class="mapband"></div>
+
+
+    <div class="content-section-space"></div>
+
+
+    <div class="content-section-a" id="call">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-5">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading" data-localize="call.title">Call</h2>
+                    <p class="lead" data-localize="call.first"></p>
+                    <p class="lead" data-localize="call.second"></p>
+                    <p class="lead" data-localize="call.third"></p>
+                    <p class="lead" data-localize="call.video"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/EuMovingImage" data-widget-id="458232441467961345">Tweets de @EuMovingImage</a> -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <div class="content-section-c" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-7 about">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading" data-localize="abouttitle"></h2>
+                    <div data-localize="about"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="site-footer">
+        <!--<a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>-->
+        <div class="inner">
+
+            <a href="http://www.jeunesseenaction.fr/" target="_blank"><img src="assets/img/logos/peja_small.jpg"/></a>
+            <img src="assets/img/logos/logo.png"/>
+            <section class="copyright">photo credits by <a href="http://jaidixans.tumblr.com/" target="_blank">Margaux Opinel</section>
+            <!--<section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>-->
+        </div>
+    </footer>
+
+
+
+    <script type="text/javascript">
+        
+        //$('.countdown').html("<div>" + 12 + " <span>days</span></div><div>" + 32 + " <span>hrs</span></div><div>" + 43 + " <span>min</span></div><div>" + 43 + " <span>sec</span></div>");
+        
+
+
+        // $('.countdown').countdown({
+        //     date: "July 2, 2014 00:00:00",
+        //     render: function(data) {
+        //         $(this.el).html("<div>" + this.leadingZeros(data.days, 2) + " <span>days</span></div><div>" + this.leadingZeros(data.hours, 2) + " <span>hrs</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
+        //     }
+        // });
+
+
+
+      // called on voting button click
+      var ploufvoter = function(vid) {
+        //vid = vid+"_test";
+        console.log("Voting button video id:",vid);
+        
+        $("#email").removeAttr("disabled");
+        $("#emailbutton").button('reset');
+
+        $('#mailmodal').modal();
+
+        $("#emailbutton").on("click", function(){
+            var themail = $("#email").val();
+            $("#emailbutton").button('loading');
+            $("#email").attr("disabled", "disabled");
+
+            // ajax call
+            $.ajax({
+              type: "GET",
+              //url: "//localhost:8080/p/vote",
+              url: "//api.europemovingimage.eu/p/vote",
+              data: {
+                pid: vid,
+                ident: "mail_"+themail,
+              },
+              success: function(data) {
+                console.log("success ?",data);
+                if(data.success) {
+                    $("#emailbutton").button('success');
+                    $("#emailbutton").off();
+                    setTimeout(function() {
+                        $('#mailmodal').modal("hide");
+                        $("#email").removeAttr("disabled");
+                        $("#emailbutton").button('reset');
+                    },1000);
+                } else {
+                    $("#emailbutton").button('error');
+                    $("#emailbutton").off();
+                }
+              },
+              error: function(data) {
+                console.log("error:",data);
+                $("#emailbutton").button('fucked');
+                $("#emailbutton").off();
+              }
+            });
+        });
+      }
+    </script>
+
+    <script type="text/javascript" src="assets/js/index.js"></script>
+
+</body>
+
+
+<!-- google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-48066946-1', 'europemovingimage.eu');
+  ga('send', 'pageview');
+</script>
+</html>
